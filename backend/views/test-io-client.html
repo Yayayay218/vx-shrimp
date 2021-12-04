@@ -1,0 +1,21 @@
+<!-- test-io-client.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+
+<script>
+    function init()
+    {
+        console.log('init');
+        var socket = io.connect('http://localhost:9898', {forceNew: true})
+        socket.on('connect', function() {
+            console.log('connect');
+        });
+
+        socket.emit('user_connect', ({_id: 'userId', salon_sub_domain: 'khanabc'}))
+    }
+
+    window.addEventListener("load", init, false);
+</script>
+
+<h2>Socket.io Test</h2>
+
+<div id="output"></div>
