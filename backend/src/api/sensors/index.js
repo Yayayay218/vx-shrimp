@@ -29,6 +29,10 @@ router.get('/daily', sensorsController.postDaily)
 
 router.get('/test', sensorsController.test)
 
+router.get('/ac-on', sensorsController.turnOnAc)
+
+router.get('/ac-off', sensorsController.turnOffAc)
+
 router.get('/air-status', sensorsController.getAirStatus)
 
 router.get('/:id', sensorsController.findOne);

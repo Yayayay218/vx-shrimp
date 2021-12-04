@@ -27,9 +27,29 @@ class SensorsController extends Controller {
     }
   }
 
+  async turnOnAc(req, res, next) {
+    try {
+      await sensorsService.turnOnAc()
+
+      return Response.success(res, 'Done')
+    } catch (e) {
+      next(e)
+    }
+  }
+
+  async turnOffAc(req, res, next) {
+    try {
+      await sensorsService.turnOffAc()
+
+      return Response.success(res, 'Done')
+    } catch (e) {
+      next(e)
+    }
+  }
+
   async getAirStatus(req, res, next) {
     try {
-      await sensorsService.getAirStatus()
+      await sensorsService.getAcStatus()
 
       return Response.success(res, 'Done')
     } catch (e) {

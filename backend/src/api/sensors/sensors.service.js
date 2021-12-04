@@ -86,10 +86,27 @@ class SensorsService extends Service {
     return 'OK'
   }
 
-  getAirStatus = async () => {
+  turnOnAc = async () => {
+    let data = { mode: 2, power: true, temp: 22, ac_mode: 1, fan: 4 };
+
+    wsServer.broadcastUTF(JSON.stringify(data))
+
+    return 'OK'
+  }
+
+  turnOffAc = async () => {
+    let data = { mode: 2, power: false, temp: 22, ac_mode: 1, fan: 4 };
+
+    wsServer.broadcastUTF(JSON.stringify(data))
+
+    return 'OK'
+  }
+
+  getAcStatus = async () => {
     let data = { mode: 1, power: false, temp: 22, ac_mode: 1, fan: 4 };
 
     wsServer.broadcastUTF(JSON.stringify(data))
+
 
     return 'OK'
   }
