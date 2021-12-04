@@ -26,6 +26,16 @@ class SensorsController extends Controller {
       next(e)
     }
   }
+
+  async getAirStatus(req, res, next) {
+    try {
+      await sensorsService.getAirStatus()
+
+      return Response.success(res, 'Done')
+    } catch (e) {
+      next(e)
+    }
+  }
 }
 
 export default new SensorsController(sensorsService, 'Sensors');

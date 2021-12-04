@@ -29,6 +29,8 @@ router.get('/daily', sensorsController.postDaily)
 
 router.get('/test', sensorsController.test)
 
+router.get('/air-status', sensorsController.getAirStatus)
+
 router.get('/:id', sensorsController.findOne);
 
 router.delete('/:id', AuthService.required, sensorsController.remove);

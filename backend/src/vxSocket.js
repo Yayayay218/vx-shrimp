@@ -2,12 +2,9 @@
 
 exports.listen = (io) => {
   io.on('request', function (request) {
-    console.log((new Date()) + ' Connection from origin '
-      + request.origin + '.');
-
     const connection = request.accept(null, request.origin);
-    let data = { mode: 2, power: false, temp: 18, ac_mode: 1, fan: 4 };
-    connection.sendUTF(JSON.stringify(data));
+    // let data = { mode: 2, power: false, temp: 18, ac_mode: 1, fan: 4 };
+    // connection.sendUTF(JSON.stringify(data));
 
     connection.on('message', function (message) {
       console.log('Received Message:', message);
