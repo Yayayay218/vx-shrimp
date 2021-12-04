@@ -3,7 +3,7 @@
     {
       "merge_logs": true,
       "name": "vx-shripm",
-      "script": "npm run serve",
+      "script": "npm start",
       "out_file": "out.log",
       "error_file": "error.log",
       "log_date_format": "MM/DD/YYYY HH:mm:ss"
