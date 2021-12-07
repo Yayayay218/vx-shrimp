@@ -70,7 +70,9 @@ class SensorsService extends Service {
     }
 
     await Sensors.create({
-      ...body,
+      temp,
+      tds,
+      ph: 7,
       warning,
       status
     })
